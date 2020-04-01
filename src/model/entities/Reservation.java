@@ -32,7 +32,7 @@ public class Reservation {
 
 	public Date getCheckIn() {
 		return checkIn;
-	}
+	} 
 
 	public Date getCheckOut() {
 		return checkOut;
