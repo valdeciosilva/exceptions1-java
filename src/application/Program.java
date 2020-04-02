@@ -45,7 +45,7 @@ public class Program {
 				System.out.print("Check-out date (dd/MM/yyyy): ");
 				checkOut = sdf.parse(sc.next());
 				
-				Date now = new Date();
+				/*Date now = new Date();
 				if (checkIn.before(now) || checkOut.before(now)) {					
 					System.out.println("Erros in reservation: Reservation dates for updates must in future dates");
 				} else if (!checkOut.after(checkIn)) {
@@ -53,28 +53,15 @@ public class Program {
 				}else {
 					reservation.updateDates(checkIn, checkOut);
 					System.out.println("Reservation: " + reservation);
-				}
-				/*String error = reservation.updateDates(checkIn, checkOut);
+				}*/
+				String error = reservation.updateDates(checkIn, checkOut);
 				if (error != null) {
 					System.out.println("Error in reservation: " + error);
 				} else {
 					System.out.println("Reservation: " + reservation);
-				}*/
+				}
 					
 			}
-			
-			//reservation.updateDates(checkIn, checkOut);
-			//System.out.println("Reservation: " + reservation);
-		/*}
-		catch (ParseException e) {
-			System.out.println("Invalid date format");
-		}
-		catch (DomainException e) {
-			System.out.println("Error in reservation: " + e.getMessage());
-		}
-		catch (RuntimeException e) {
-			System.out.println("Unexpected error");
-		}*/
 
 		sc.close();
 
