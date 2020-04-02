@@ -19,24 +19,25 @@ public class Program {
 			int number = sc.nextInt();
 			System.out.print("Check-in date (dd/MM/yyyy): ");
 			Date checkIn = sdf.parse(sc.next());
-			System.out.print("Check-out date (dd/MM/yyyy): ");
+			System.out.print("Check-out date (dd/MM/yyyy): ");			
 			Date checkOut = sdf.parse(sc.next());
 			
 			//Reservation reservation = new Reservation(number, checkIn, checkOut);
 			//System.out.println("Reservation: " + reservation);
 			
-			System.out.println();
+			/*System.out.println();
 			System.out.println("Enter data to update the reservation:");
 			System.out.print("Check-in date (dd/MM/yyyy): ");
 			checkIn = sdf.parse(sc.next());
 			System.out.print("Check-out date (dd/MM/yyyy): ");
-			checkOut = sdf.parse(sc.next());
+			checkOut = sdf.parse(sc.next());*/
 			
 			if (!checkOut.after(checkIn)) {
 				System.out.println("Erros in reservation: Check-out date must be after check-in date");
 			} else {
 				Reservation reservation = new Reservation(number, checkIn, checkOut);
 				System.out.println("Reservation: " + reservation);
+				
 				System.out.println();
 				System.out.println("Enter data to update the revervation: ");
 				System.out.print("Check-in date (dd/MM/yyyy): ");
@@ -45,7 +46,7 @@ public class Program {
 				checkOut = sdf.parse(sc.next());
 				
 				Date now = new Date();
-				if (checkIn.before(now) || (checkOut.before(now)) ) {
+				if (checkIn.before(now) || checkOut.before(now)) {					
 					System.out.println("Erros in reservation: Reservation dates for updates must in future dates");
 				} else if (!checkOut.after(checkIn)) {
 					System.out.println("Erros in reservation: Check-out date must be after check-in date");
@@ -53,7 +54,13 @@ public class Program {
 					reservation.updateDates(checkIn, checkOut);
 					System.out.println("Reservation: " + reservation);
 				}
-				
+				/*String error = reservation.updateDates(checkIn, checkOut);
+				if (error != null) {
+					System.out.println("Error in reservation: " + error);
+				} else {
+					System.out.println("Reservation: " + reservation);
+				}*/
+					
 			}
 			
 			//reservation.updateDates(checkIn, checkOut);
